@@ -4,19 +4,19 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
         <div
           aria-hidden="true"
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(circle at top center, rgba(99,102,241,0.12), rgba(9,9,11,0) 55%)",
+              "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(99,102,241,0.22), rgba(9,9,11,0) 60%)",
           }}
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-[0.2]"
+          className="absolute inset-0 opacity-[0.35]"
           style={{
             backgroundImage:
               "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
@@ -25,8 +25,8 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative mx-auto flex min-h-screen max-w-5xl items-center justify-center px-4 py-24 text-center sm:px-6">
-        <div>
+      <div className="relative mx-auto max-w-5xl px-4 pt-32 pb-28 text-center sm:px-6 sm:pt-40 sm:pb-36">
+        <div className="mx-auto">
           <p className="mb-5 inline-flex rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1 text-sm text-indigo-300">
             Trusted by Bay Area SMBs
           </p>

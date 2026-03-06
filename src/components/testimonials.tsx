@@ -1,63 +1,41 @@
 import { Star } from "lucide-react";
 
 const testimonials = [
-  {
-    name: "Sarah Chen",
-    company: "Bright Smile Dental",
-    initials: "SC",
-    quote:
-      "We went from missed leads to a full pipeline. The AI agent now qualifies every inquiry before our team ever sees it.",
-  },
-  {
-    name: "Marcus Johnson",
-    company: "ProClean Services",
-    initials: "MJ",
-    quote:
-      "Follow-up is now automatic and context-aware. Response times dropped and conversion improved immediately after launch.",
-  },
-  {
-    name: "Emily Rodriguez",
-    company: "Summit Physical Therapy",
-    initials: "ER",
-    quote:
-      "Review outreach became effortless. The system collects, follows up, and keeps reputation work consistent every week.",
-  },
+  { name: "Sarah Chen", company: "Bright Smile Dental", initials: "SC", quote: "We went from missing leads every night to a full pipeline. The AI agent qualifies every inquiry before our team ever sees it." },
+  { name: "Marcus Johnson", company: "ProClean Services", initials: "MJ", quote: "Response times dropped to under 2 minutes. Our close rate jumped 35% because no lead goes cold anymore." },
+  { name: "Emily Rodriguez", company: "Summit Physical Therapy", initials: "ER", quote: "Review management is now effortless. The system collects, follows up, and keeps our reputation consistent every week." },
 ];
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="px-4 py-16 sm:px-6 sm:py-24">
-      <div className="mx-auto max-w-6xl">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-4xl font-semibold text-white">What Clients Say</h2>
-          <p className="mt-4 text-zinc-400">What real operators see after implementing our systems.</p>
-        </div>
+    <section className="mx-auto max-w-[1120px] px-6 py-[140px]">
+      <div className="mb-16">
+        <p className="mb-3 text-[13px] font-medium uppercase tracking-[0.08em]" style={{ color: "rgba(255,255,255,0.3)" }}>Results</p>
+        <h2 className="font-display" style={{ fontSize: "40px", fontWeight: 600, lineHeight: 1.1, letterSpacing: "-0.03em", color: "#EDEDED" }}>
+          What operators say
+        </h2>
+      </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <article
-              key={testimonial.name}
-              className="rounded-2xl border border-white/8 bg-zinc-900/50 p-6"
-            >
-              <div className="mb-4 flex items-center gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                ))}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        {testimonials.map(t => (
+          <article key={t.name} className="flex flex-col gap-6 rounded-xl p-8"
+                   style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+            <div className="flex gap-1">
+              {[...Array(5)].map((_, i) => <Star key={i} className="h-3.5 w-3.5" style={{ fill: "#EAB308", color: "#EAB308" }} />)}
+            </div>
+            <p style={{ fontSize: "15px", lineHeight: 1.7, color: "rgba(255,255,255,0.65)" }}>&ldquo;{t.quote}&rdquo;</p>
+            <div className="flex items-center gap-3 pt-2" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+              <div className="flex h-9 w-9 items-center justify-center rounded-full text-[12px] font-semibold"
+                   style={{ background: "rgba(124,92,252,0.15)", color: "#A78BFA" }}>
+                {t.initials}
               </div>
-
-              <p className="mb-4 text-zinc-300">&ldquo;{testimonial.quote}&rdquo;</p>
-              <div className="flex items-center gap-3 border-t border-white/8 pt-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500/20 text-sm font-semibold text-indigo-300">
-                  {testimonial.initials}
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-white">{testimonial.name}</p>
-                  <p className="text-sm text-zinc-400">{testimonial.company}</p>
-                </div>
+              <div>
+                <p style={{ fontSize: "13px", fontWeight: 500, color: "#EDEDED" }}>{t.name}</p>
+                <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.35)" }}>{t.company}</p>
               </div>
-            </article>
-          ))}
-        </div>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

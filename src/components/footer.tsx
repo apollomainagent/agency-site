@@ -1,36 +1,23 @@
 export function Footer() {
   return (
-    <footer className="border-t border-white/6 bg-[#09090B] px-4 py-10 sm:px-6">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 text-zinc-500 sm:flex-row">
+    <footer className="mx-auto max-w-[1120px] px-6 py-16"
+            style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+      <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
         <div>
-          <p className="font-display text-sm text-white">
-            Apollo 🚀 Operations
-          </p>
-          <p className="text-sm">Built with AI. Deployed with intention.</p>
+          <p className="font-display text-[15px] font-semibold" style={{ color: "#EDEDED" }}>Apollo Operations 🚀</p>
+          <p className="mt-1 text-[13px]" style={{ color: "rgba(255,255,255,0.3)" }}>Built with AI. Deployed with intention.</p>
         </div>
-
-        <div className="flex gap-6">
-          <a
-            href="#services"
-            className="text-sm transition-colors hover:text-white"
-          >
-            Services
-          </a>
-          <a
-            href="#pricing"
-            className="text-sm transition-colors hover:text-white"
-          >
-            Pricing
-          </a>
-          <a
-            href="#testimonials"
-            className="text-sm transition-colors hover:text-white"
-          >
-            Testimonials
-          </a>
+        <div className="flex gap-8">
+          {["Services", "Process", "Pricing"].map(l => (
+            <a key={l} href={`#${l.toLowerCase()}`}
+               className="text-[13px] text-[rgba(255,255,255,0.35)] transition-colors hover:text-[rgba(255,255,255,0.7)]">
+              {l}
+            </a>
+          ))}
         </div>
-
-        <p className="text-sm">© {new Date().getFullYear()} Apollo Operations.</p>
+        <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.2)" }}>
+          © {new Date().getFullYear()} Apollo Operations
+        </p>
       </div>
     </footer>
   );

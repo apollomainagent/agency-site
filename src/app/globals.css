@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,38 +7,37 @@
 @layer base {
   :root {
     --background: 240 10% 4%;
-    --foreground: 0 0% 98%;
+    --foreground: 0 0% 93%;
     --card: 240 6% 7%;
-    --card-foreground: 0 0% 98%;
+    --card-foreground: 0 0% 93%;
     --popover: 240 6% 7%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 239 84% 67%;
+    --popover-foreground: 0 0% 93%;
+    --primary: 262 93% 64%;
     --primary-foreground: 0 0% 100%;
     --secondary: 240 6% 12%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary-foreground: 0 0% 93%;
     --muted: 240 4% 16%;
-    --muted-foreground: 240 5% 65%;
-    --accent: 239 84% 67%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 63% 50%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 6% 12%;
-    --input: 240 6% 12%;
-    --ring: 239 84% 67%;
+    --muted-foreground: 240 5% 55%;
+    --border: 240 6% 10%;
+    --input: 240 6% 10%;
+    --ring: 262 93% 64%;
     --radius: 0.5rem;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  * { @apply border-border; }
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    @apply bg-[#09090B] text-[#EDEDED] antialiased;
+    font-family: "Inter", sans-serif;
   }
 }
 
 .font-display {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
+}
+
+/* Accent glow effect for cards */
+.glow-violet {
+  box-shadow: 0 0 40px rgba(124, 92, 252, 0.15);
 }

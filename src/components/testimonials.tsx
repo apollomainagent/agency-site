@@ -1,68 +1,61 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Dr. Sarah Chen",
-    role: "Owner, Bright Smile Dental",
+    name: "Sarah Chen",
+    company: "Bright Smile Dental",
+    initials: "SC",
     quote:
-      "We went from 15 new patients a month to over 40 within 60 days. The AI chat widget alone captures leads we used to miss every single night.",
+      "We went from missed leads to a full pipeline. The AI agent now qualifies every inquiry before our team ever sees it.",
   },
   {
     name: "Marcus Johnson",
-    role: "Founder, ProClean Services",
+    company: "ProClean Services",
+    initials: "MJ",
     quote:
-      "The automated follow-up system is a game-changer. Our close rate jumped 35% because no lead goes more than 2 minutes without a response.",
+      "Follow-up is now automatic and context-aware. Response times dropped and conversion improved immediately after launch.",
   },
   {
     name: "Emily Rodriguez",
-    role: "Director, Summit Physical Therapy",
+    company: "Summit Physical Therapy",
+    initials: "ER",
     quote:
-      "We used to spend hours chasing patients for reviews. Now it happens automatically, and our Google rating went from 3.8 to 4.7 stars.",
+      "Review outreach became effortless. The system collects, follows up, and keeps reputation work consistent every week.",
   },
 ];
 
 export function Testimonials() {
   return (
-    <section
-      id="testimonials"
-      className="border-y border-border/40 bg-muted/40 px-4 py-20 sm:px-6 sm:py-28"
-    >
+    <section id="testimonials" className="px-4 py-20 sm:px-6 sm:py-28">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
-            Results That Speak
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Trusted by Growing Businesses
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Real results from real business owners who automated their lead
-            pipeline with Apollo Agency.
-          </p>
+          <h2 className="font-display text-4xl font-semibold text-white">What Clients Say</h2>
+          <p className="mt-4 text-zinc-400">What real operators see after implementing our systems.</p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-3">
-          {testimonials.map((t) => (
-            <Card key={t.name} className="border-border/50 bg-card">
-              <CardContent className="pt-6">
-                <div className="mb-4 flex gap-1">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 fill-primary text-primary"
-                    />
-                  ))}
+        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {testimonials.map((testimonial) => (
+            <article
+              key={testimonial.name}
+              className="rounded-2xl border border-white/8 bg-zinc-900/50 p-6"
+            >
+              <div className="mb-4 flex items-center gap-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+
+              <p className="mb-4 text-zinc-300">&ldquo;{testimonial.quote}&rdquo;</p>
+              <div className="flex items-center gap-3 border-t border-white/8 pt-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500/20 text-sm font-semibold text-indigo-300">
+                  {testimonial.initials}
                 </div>
-                <blockquote className="text-sm leading-relaxed text-muted-foreground">
-                  &ldquo;{t.quote}&rdquo;
-                </blockquote>
-                <div className="mt-4 border-t border-border/40 pt-4">
-                  <p className="text-sm font-semibold">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                <div>
+                  <p className="text-sm font-semibold text-white">{testimonial.name}</p>
+                  <p className="text-sm text-zinc-400">{testimonial.company}</p>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </article>
           ))}
         </div>
       </div>

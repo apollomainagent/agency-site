@@ -1,55 +1,45 @@
 const steps = [
   {
     number: "01",
-    title: "Discovery Call",
+    title: "Audit & Strategy",
     description:
-      "We learn about your business, your ideal customer, and where leads are falling through the cracks.",
+      "We review your funnel, team workflow, and CRM stack to identify high-leverage automation opportunities.",
   },
   {
     number: "02",
-    title: "Build & Launch",
+    title: "Build & Integrate",
     description:
-      "We design and deploy your custom AI systems — chat widget, follow-up sequences, booking flows, and review requests.",
+      "We design your agents, connect your tools, and tune prompts and routing so every interaction is aligned to your goals.",
   },
   {
     number: "03",
-    title: "Optimize & Scale",
+    title: "Launch & Optimize",
     description:
-      "We monitor performance, tune the AI, and continuously improve conversion rates so your calendar stays full.",
+      "We deploy, monitor, and iterate weekly, improving conversion and response quality as your business grows.",
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section
-      id="how-it-works"
-      className="border-y border-border/40 bg-muted/40 px-4 py-20 sm:px-6 sm:py-28"
-    >
+    <section id="how-it-works" className="px-4 py-20 sm:px-6 sm:py-28">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
-            Simple Process
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            How It Works
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            From first call to a fully automated pipeline in as little as two
-            weeks.
+          <h2 className="font-display text-4xl font-semibold text-white">How It Works</h2>
+          <p className="mt-4 text-zinc-400">
+            A simple execution model built to get your AI systems live faster and improving fast.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-10 sm:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-3">
           {steps.map((step) => (
-            <div key={step.number} className="text-center sm:text-left">
-              <span className="text-4xl font-extrabold text-primary/20">
-                {step.number}
-              </span>
-              <h3 className="mt-2 text-xl font-semibold">{step.title}</h3>
-              <p className="mt-2 text-muted-foreground leading-relaxed">
-                {step.description}
-              </p>
-            </div>
+            <article
+              key={step.number}
+              className="rounded-xl border border-white/8 bg-zinc-900/50 p-6"
+            >
+              <p className="text-6xl font-bold text-indigo-500/30">{step.number}</p>
+              <h3 className="mt-4 text-xl font-semibold text-white">{step.title}</h3>
+              <p className="mt-2 text-zinc-400">{step.description}</p>
+            </article>
           ))}
         </div>
       </div>
